@@ -11,8 +11,16 @@
         h1 { color: #d63384; }
         #timer { font-size: 20px; font-weight: bold; color: #fff; background: linear-gradient(45deg, #d63384, #ff80ab); padding: 20px; border-radius: 20px; margin: 20px 0; animation: pulse 2s infinite; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        
+        /* رسالة إضافية قبل الصور */
+        .intro-text { color: #d63384; font-size: 18px; font-weight: bold; margin-bottom: 20px; padding: 10px; border-bottom: 2px solid #fce4e4; }
+
         audio { width: 100%; border-radius: 50px; margin-top: 10px; }
-        .gallery img { width: 100%; border-radius: 20px; margin-top: 15px; border: 4px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        
+        .gallery { display: flex; flex-direction: column; align-items: center; gap: 25px; margin-top: 25px; }
+        .image-box { width: 100%; }
+        .gallery img { width: 90%; max-width: 300px; border-radius: 20px; border: 4px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .romantic-text { color: #d63384; font-size: 16px; font-weight: bold; margin-top: 10px; padding: 0 15px; }
     </style>
 </head>
 <body>
@@ -20,6 +28,7 @@
     <div class="container" id="login-screen">
         <h1>أهلاً يا مريومتي ❤️</h1>
         <input type="password" id="pass" placeholder="كلمة السر">
+        <br>
         <button onclick="check()">فتح الهدية</button>
     </div>
 
@@ -31,9 +40,25 @@
             <source src="Wentamaaya.mp3" type="audio/mpeg">
         </audio>
 
+        <div class="intro-text">صورنا مع بعض هي أحلى ذكريات في حياتي ❤️</div>
+
         <div class="gallery">
-            <img src="your-image1.jpg" alt="حبنا">
-            <p>كل لحظة معاكي هي أجمل أيام عمري ❤️</p>
+            <div class="image-box">
+                <img src="IMG-20260425-WA0000.jpg" alt="حبنا">
+                <p class="romantic-text">تاهت عيوني في بحور عيونها، واختار قلبي أن يغوص فيغرق.</p>
+            </div>
+            <div class="image-box">
+                <img src="IMG-20260522-WA0019.jpg" alt="حبنا">
+                <p class="romantic-text">مش عايز من الدنيا غير إن كل أيامي الجاية تبقي إنتي فيها. إنتي البداية اللي اتمنيتها والنهاية اللي هعيش عشانها. جنبك أنا مطمن إن بكرة أحلى 🌚🫂♥️♥️♥️♥️♥️♥️♥️😍🌍💍</p>
+            </div>
+            <div class="image-box">
+                <img src="IMG-20260521-WA0011.jpg" alt="حبنا">
+                <p class="romantic-text">من وسط كل الناس، أنت الوحيد اللي لما ييجي في بالي أحس إن قلبي ابتسم قبل حتى ما أبتسم أنا 🥹🫂🌏🌷💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗</p>
+            </div>
+            <div class="image-box">
+                <img src="IMG-20260612-WA0006.jpg" alt="حبنا">
+                <p class="romantic-text">مهما حصل هيفضل ليكي مكانه خاصة في قلبي ومهما كتبت كلام مش هيكفي أو يوصف قد إيه أنا بحبك وبموت فيك🥹🫵🏻🌎🏡❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
+            </div>
         </div>
     </div>
 
