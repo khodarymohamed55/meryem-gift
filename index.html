@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هدية لمريومتي</title>
+    <style>
+        body { background-color: #fdf5f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: 'Segoe UI', sans-serif; }
+        .container { text-align: center; background: white; padding: 40px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 85%; max-width: 400px; }
+        #main-content { display: none; }
+        h1 { color: #d63384; }
+        input { width: 80%; padding: 12px; margin: 20px 0; border: 2px solid #fce4e4; border-radius: 10px; text-align: center; }
+        button { background-color: #d63384; color: white; border: none; padding: 10px 30px; border-radius: 10px; cursor: pointer; font-size: 16px; }
+        #timer { font-size: 22px; font-weight: bold; color: #d63384; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- صفحة الدخول -->
+    <div class="container" id="login-screen">
+        <h1>أهلاً يا مريومتي ❤️</h1>
+        <p>أدخلي كلمة السر لفتح الهدية</p>
+        <input type="password" id="pass" placeholder="كلمة السر">
+        <br>
+        <button onclick="check()">فتح الهدية</button>
+    </div>
+
+    <!-- صفحة المحتوى (تظهر بعد الباسورد) -->
+    <div class="container" id="main-content">
+        <h1>بحبك يا مريومتي ❤️</h1>
+        <p>مر على حبنا:</p>
+        <div id="timer"></div>
+    </div>
+
+    <script>
+        function check() {
+            let p = document.getElementById("pass").value;
+            if (p === "Roma") {
+                document.getElementById("login-screen").style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+                updateCounter();
+            } else {
+                alert("كلمة السر غلط يا عمري، حاولي تاني!");
+            }
+        }
+
+        function updateCounter() {
+            let startDate = new Date("2021-07-19T00:00:00");
+            let now = new Date();
+            let diff = now - startDate;
+            let years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            let days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+            document.getElementById("timer").innerHTML = years + " سنة و " + days + " يوم";
+        }
+    </script>
+</body>
+</html>
