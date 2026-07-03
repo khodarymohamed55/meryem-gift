@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>هدية لمريومتي</title>
     <style>
-        body { background-color: #fdf5f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background: linear-gradient(135deg, #fdf5f5, #f8bbd0); display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: 'Segoe UI', sans-serif; }
         .container { text-align: center; background: white; padding: 40px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 85%; max-width: 400px; }
         #main-content { display: none; }
         h1 { color: #d63384; }
-        input { width: 80%; padding: 12px; margin: 20px 0; border: 2px solid #fce4e4; border-radius: 10px; text-align: center; }
-        button { background-color: #d63384; color: white; border: none; padding: 10px 30px; border-radius: 10px; cursor: pointer; font-size: 16px; }
-        #timer { font-size: 22px; font-weight: bold; color: #d63384; margin-top: 20px; }
+        input { width: 80%; padding: 12px; margin: 20px 0; border: 2px solid #fce4e4; border-radius: 10px; text-align: center; font-size: 16px; }
+        button { background-color: #d63384; color: white; border: none; padding: 12px 30px; border-radius: 10px; cursor: pointer; font-size: 16px; }
+        #timer { font-size: 24px; font-weight: bold; color: #d63384; margin: 20px 0; }
     </style>
 </head>
 <body>
@@ -25,19 +25,24 @@
         <button onclick="check()">فتح الهدية</button>
     </div>
 
-    <!-- صفحة المحتوى (تظهر بعد الباسورد) -->
+    <!-- صفحة المحتوى -->
     <div class="container" id="main-content">
         <h1>بحبك يا مريومتي ❤️</h1>
         <p>مر على حبنا:</p>
         <div id="timer"></div>
+        <!-- الأغنية موجودة هنا مخفية وهتشتغل أوتوماتيك -->
+        <audio id="bg-music" src="song.mp3" loop></audio>
     </div>
 
     <script>
         function check() {
-            let p = document.getElementById("pass").value;
-            if (p === "Roma") {
+            if (document.getElementById("pass").value === "Roma") {
                 document.getElementById("login-screen").style.display = "none";
                 document.getElementById("main-content").style.display = "block";
+                
+                // تشغيل الأغنية أوتوماتيك بمجرد فتح الصفحة
+                document.getElementById('bg-music').play();
+                
                 updateCounter();
             } else {
                 alert("كلمة السر غلط يا عمري، حاولي تاني!");
