@@ -6,27 +6,28 @@
     <title>هدية لمريومتي</title>
     <style>
         body { background: linear-gradient(135deg, #fdf5f5, #f8bbd0); display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; font-family: 'Segoe UI', sans-serif; }
-        .container { text-align: center; background: white; padding: 30px; border-radius: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); width: 90%; max-width: 450px; }
-        #main-content { display: none; }
-        h1 { color: #d63384; }
-        #timer { font-size: 20px; font-weight: bold; color: #fff; background: linear-gradient(45deg, #d63384, #ff80ab); padding: 20px; border-radius: 20px; margin: 20px 0; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
         
-        /* رسالة إضافية قبل الصور */
-        .intro-text { color: #d63384; font-size: 18px; font-weight: bold; margin-bottom: 20px; padding: 10px; border-bottom: 2px solid #fce4e4; }
-
-        audio { width: 100%; border-radius: 50px; margin-top: 10px; }
+        /* تصميم الصندوق (الظرف) */
+        .container { text-align: center; background: white; padding: 40px; border-radius: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); width: 90%; max-width: 450px; transition: opacity 1s ease-in-out; }
+        
+        #main-content { display: none; opacity: 0; }
+        
+        h1 { color: #d63384; }
+        input { padding: 10px; border-radius: 10px; border: 1px solid #ddd; margin: 10px 0; width: 80%; }
+        button { background: #d63384; color: white; border: none; padding: 10px 25px; border-radius: 10px; cursor: pointer; font-size: 16px; }
+        
+        #timer { font-size: 20px; font-weight: bold; color: #fff; background: linear-gradient(45deg, #d63384, #ff80ab); padding: 20px; border-radius: 20px; margin: 20px 0; }
         
         .gallery { display: flex; flex-direction: column; align-items: center; gap: 25px; margin-top: 25px; }
-        .image-box { width: 100%; }
-        .gallery img { width: 90%; max-width: 300px; border-radius: 20px; border: 4px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .gallery img { width: 90%; max-width: 300px; border-radius: 20px; border: 4px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 0.3s; }
+        .gallery img:hover { transform: scale(1.05); }
         .romantic-text { color: #d63384; font-size: 16px; font-weight: bold; margin-top: 10px; padding: 0 15px; }
     </style>
 </head>
 <body>
 
     <div class="container" id="login-screen">
-        <h1>أهلاً يا مريومتي ❤️</h1>
+        <h1>اسف يا مريومتي ❤️</h1>
         <input type="password" id="pass" placeholder="كلمة السر">
         <br>
         <button onclick="check()">فتح الهدية</button>
@@ -34,13 +35,11 @@
 
     <div class="container" id="main-content">
         <h1>مر على حبنا:</h1>
-        <div id="timer">جاري التحميل...</div>
+        <div id="timer">...</div>
         
         <audio controls id="bg-music">
             <source src="Wentamaaya.mp3" type="audio/mpeg">
         </audio>
-
-        <div class="intro-text">صورنا مع بعض هي أحلى ذكريات في حياتي ❤️</div>
 
         <div class="gallery">
             <div class="image-box">
@@ -49,15 +48,15 @@
             </div>
             <div class="image-box">
                 <img src="IMG-20260522-WA0019.jpg" alt="حبنا">
-                <p class="romantic-text">مش عايز من الدنيا غير إن كل أيامي الجاية تبقي إنتي فيها. إنتي البداية اللي اتمنيتها والنهاية اللي هعيش عشانها. جنبك أنا مطمن إن بكرة أحلى 🌚🫂♥️♥️♥️♥️♥️♥️♥️😍🌍💍</p>
+                <p class="romantic-text">مش عايز من الدنيا غير إن كل أيامي الجاية تبقي إنتي فيها. إنتي البداية اللي اتمنيتها والنهاية اللي هعيش عشانها.</p>
             </div>
             <div class="image-box">
                 <img src="IMG-20260521-WA0011.jpg" alt="حبنا">
-                <p class="romantic-text">من وسط كل الناس، أنت الوحيد اللي لما ييجي في بالي أحس إن قلبي ابتسم قبل حتى ما أبتسم أنا 🥹🫂🌏🌷💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗</p>
+                <p class="romantic-text">من وسط كل الناس ، أنت الوحيد اللي لما ييجي في بالي أحس إن قلبي ابتسم قبل حتى ما أبتسم أنا 🥹</p>
             </div>
             <div class="image-box">
                 <img src="IMG-20260612-WA0006.jpg" alt="حبنا">
-                <p class="romantic-text">مهما حصل هيفضل ليكي مكانه خاصة في قلبي ومهما كتبت كلام مش هيكفي أو يوصف قد إيه أنا بحبك وبموت فيك🥹🫵🏻🌎🏡❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
+                <p class="romantic-text">مهما حصل هيفضل ليكي مكانه خاصة في قلبي ومهما كتبت كلام مش هيكفي.</p>
             </div>
         </div>
     </div>
@@ -65,10 +64,15 @@
     <script>
         function check() {
             if (document.getElementById("pass").value === "Roma") {
-                document.getElementById("login-screen").style.display = "none";
-                document.getElementById("main-content").style.display = "block";
-                document.getElementById('bg-music').play();
-                startTimer();
+                // تأثير الظرف اللي بيفتح
+                document.getElementById("login-screen").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("login-screen").style.display = "none";
+                    document.getElementById("main-content").style.display = "block";
+                    document.getElementById("main-content").style.opacity = "1";
+                    document.getElementById('bg-music').play();
+                    startTimer();
+                }, 1000);
             } else { alert("كلمة السر غلط يا عمري!"); }
         }
 
@@ -78,10 +82,7 @@
                 const now = new Date();
                 const diff = now - startDate;
                 const d = Math.floor(diff / (1000*60*60*24));
-                const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-                const m = Math.floor((diff % (1000*60*60)) / (1000*60));
-                const s = Math.floor((diff % (1000*60)) / 1000);
-                document.getElementById("timer").innerHTML = `${d} يوم<br>${h} ساعة : ${m} دقيقة : ${s} ثانية`;
+                document.getElementById("timer").innerHTML = `بقالي معاكي ${d} يوم بحب فيكي ❤️`;
             }, 1000);
         }
     </script>
